@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=3 uid="uid://dfrciqp2ma6uc"]
+
+[ext_resource type="Script" path="res://scenes/Player.gd" id="1_xqpsx"]
+[ext_resource type="Texture2D" uid="uid://d2to1aj6m7mgl" path="res://assets/kenney_platformercharacters/PNG/Adventurer/adventurer_tilesheet.png" id="2_e4dcl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvrea"]
+size = Vector2(61, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58h2y"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(240, 0, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtnnm"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(80, 220, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl1ml"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(640, 0, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2ckh"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(160, 0, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jyeu"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(80, 0, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr8sg"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(400, 220, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4tvm"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(0, 110, 79, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t3lw"]
+atlas = ExtResource("2_e4dcl")
+region = Rect2(80, 110, 79, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2phxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58h2y")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtnnm")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl1ml")
+}],
+"loop": true,
+"name": &"double_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2ckh")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jyeu")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr8sg")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4tvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t3lw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_xqpsx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jvrea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.42109e-14, 2)
+scale = Vector2(0.794304, 0.794304)
+sprite_frames = SubResource("SpriteFrames_2phxt")
+animation = &"crouch"
