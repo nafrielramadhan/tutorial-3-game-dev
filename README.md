@@ -14,6 +14,8 @@ Proyek ini adalah tutorial 3 Game Dev, saya belajar untuk membuat animasi sprite
 
 ## 💻 Implementasi per-Animasi
 
+Implementasi generalnya adalah saya menambahkan AnimatedSprite2D untuk mengatur animasi karakter pada pada scene Player. Semua animasi diatur dalam _physics_process() berdasarkan kondisi karakter.
+
 **Implementasi Stand:**
 
 Animasi 'stand' diputar saat karakter tidak bergerak dan tidak dalam status lain seperti lompat atau dash. Dalam kode, ini ditentukan ketika `velocity.x == 0` dan karakter berada di tanah.
